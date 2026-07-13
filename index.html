@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ Eu te amo ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:linear-gradient(to bottom,#ff4d6d,#ff99ac);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,sans-serif;
+}
+
+h1{
+    color:white;
+    font-size:60px;
+    text-align:center;
+    text-shadow:0 0 15px rgba(255,255,255,.8);
+    z-index:2;
+}
+
+.heart{
+    position:fixed;
+    top:-20px;
+    color:#fff;
+    font-size:25px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ Eu te amo ❤️</h1>
+
+<script>
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*30)+"px";
+    heart.style.animationDuration=(3+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),8000);
+}
+
+setInterval(createHeart,180);
+</script>
+
+</body>
+</html>
